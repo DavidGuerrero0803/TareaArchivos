@@ -1,5 +1,6 @@
 package uabc.david.tareaarchivos;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -29,10 +30,11 @@ public class VistaEditor {
 
         HBox contenedorBotones = new HBox(10, cargar, guardar);
         contenedorBotones.setAlignment(Pos.CENTER);
+        contenedorBotones.setPadding(new Insets(5));
 
         BorderPane panelPrincipal = new BorderPane();
         panelPrincipal.setCenter(textArea);
-        panelPrincipal.setBottom(contenedorBotones);
+        panelPrincipal.setTop(contenedorBotones);
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(
@@ -66,7 +68,7 @@ public class VistaEditor {
             }
         });
 
-        Scene scene = new Scene(panelPrincipal, 500, 500);
+        Scene scene = new Scene(panelPrincipal, 500, 600);
         stage.setScene(scene);
         stage.show();
     }

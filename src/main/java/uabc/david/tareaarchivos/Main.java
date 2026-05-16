@@ -19,6 +19,11 @@ public class Main extends Application {
         botonEditorNotas.setPrefWidth(200);
         botonEditorNotas.setPrefHeight(40);
 
+        botonEditorNotas.setOnAction(e -> {
+            VistaEditor vistaEditor = new VistaEditor();
+            vistaEditor.mostrarEditor();
+        });
+
         VBox contenedorPrincipal = new VBox(15, botonEditorNotas);
         contenedorPrincipal.setAlignment(Pos.CENTER);
 
