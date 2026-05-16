@@ -7,11 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javafx.stage.FileChooser;
 import java.io.File;
-import java.io.IOException;
 
 public class VistaEditor {
     private  EditorNotas editor;
@@ -46,9 +45,23 @@ public class VistaEditor {
                 try {
                     String contenido = editor.cargarArchivo(archivo);
                     textArea.setText(contenido);
-                    mostrarMensaje(Alert.AlertType.CONFIRMATION, "Archivo cargado", "El archivo se cargó");
+                    mostrarMensaje(Alert.AlertType.INFORMATION, "Archivo cargado", "El archivo se cargó");
                 } catch (Exception ex) {
                     mostrarMensaje(Alert.AlertType.ERROR, "Error generado", "No se pudo leer el archivo: " + ex.getMessage());
+                }
+            }
+        });
+
+        guardar.setOnAction(e -> {
+            File archivo = fileChooser.showOpenDialog(stage);
+            if (archivo != null) {
+                if (!archivo.getName().endsWith(".txt")) {
+                    archivo = new File(archivo.getAbsolutePath() + ".txt");
+                } try {
+                    editor.guardarArchivo(archivo, textArea.getText());
+                    mostrarMensaje(Alert.AlertType.INFORMATION, "Archivo guardado", "El archivo se ha guardado");
+                } catch (Exception ex) {
+                    mostrarMensaje(Alert.AlertType.ERROR, "Error generado", "No se pudo guardar el archivo" + ex.getMessage());
                 }
             }
         });
