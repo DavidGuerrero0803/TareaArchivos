@@ -2,6 +2,7 @@ package uabc.david.tareaarchivos;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
@@ -33,5 +34,13 @@ public class VistaEditor {
         Scene scene = new Scene(panelPrincipal, 500, 500);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void mostrarMensajeError(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 }
