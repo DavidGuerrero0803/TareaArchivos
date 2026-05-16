@@ -1,6 +1,7 @@
 package uabc.david.tareaarchivos;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -13,10 +14,13 @@ public class Main extends Application {
         primaryStage.setTitle("Archivos | Flujos de caracter");
 
         Button botonEditorNotas = new Button("Editor de notas");
+        botonEditorNotas.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
-        botonEditorNotas.setMaxWidth(200);
+        botonEditorNotas.setPrefWidth(200);
+        botonEditorNotas.setPrefHeight(40);
 
         VBox contenedorPrincipal = new VBox(15, botonEditorNotas);
+        contenedorPrincipal.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(contenedorPrincipal, 500, 500);
         primaryStage.setScene(scene);
