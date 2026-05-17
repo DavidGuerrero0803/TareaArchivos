@@ -1,4 +1,5 @@
 package uabc.david.tareaarchivos.Vista;
+import uabc.david.tareaarchivos.VisualizadorCSV;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -14,7 +15,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import uabc.david.tareaarchivos.VisualizadorCSV;
 
 import java.io.File;
 
