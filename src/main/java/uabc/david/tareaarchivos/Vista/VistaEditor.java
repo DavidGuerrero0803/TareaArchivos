@@ -1,4 +1,5 @@
-package uabc.david.tareaarchivos;
+package uabc.david.tareaarchivos.Vista;
+import uabc.david.tareaarchivos.EditorNotas;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,10 +12,11 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import javafx.stage.FileChooser;
+
 import java.io.File;
 
 public class VistaEditor {
-    private  EditorNotas editor;
+    private EditorNotas editor;
 
     public VistaEditor() {
         this.editor = new EditorNotas();

@@ -1,4 +1,4 @@
-package uabc.david.tareaarchivos;
+package uabc.david.tareaarchivos.Vista;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import uabc.david.tareaarchivos.EstadisticaTexto;
 
 import java.io.File;
 import java.util.HashMap;

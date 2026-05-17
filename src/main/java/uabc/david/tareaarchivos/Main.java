@@ -1,4 +1,7 @@
 package uabc.david.tareaarchivos;
+import uabc.david.tareaarchivos.Vista.VistaCSV;
+import uabc.david.tareaarchivos.Vista.VistaEditor;
+import uabc.david.tareaarchivos.Vista.VistaEstadistica;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
