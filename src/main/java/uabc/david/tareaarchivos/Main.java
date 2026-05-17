@@ -19,11 +19,17 @@ public class Main extends Application {
         Button botonEstadistica = new Button("Estadísticas de texto");
         botonEstadistica.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
+        Button botonCSV = new Button("Visualizador CSV");
+        botonCSV.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+
         botonEditorNotas.setPrefWidth(200);
         botonEditorNotas.setPrefHeight(40);
 
         botonEstadistica.setPrefWidth(200);
         botonEstadistica.setPrefHeight(40);
+
+        botonCSV.setPrefWidth(200);
+        botonCSV.setPrefHeight(40);
 
         botonEditorNotas.setOnAction(e -> {
             VistaEditor vistaEditor = new VistaEditor();
@@ -33,6 +39,11 @@ public class Main extends Application {
         botonEstadistica.setOnAction(event -> {
             VistaEstadistica vistaEstadistica = new VistaEstadistica();
             vistaEstadistica.mostrarEstadisticas();
+        });
+
+        botonCSV.setOnAction(e -> {
+            VistaCSV vistaCSV = new VistaCSV();
+
         });
 
         VBox contenedorPrincipal = new VBox(15, botonEditorNotas, botonEstadistica);
