@@ -38,7 +38,13 @@ public class VistaEstadistica {
         infoColumna.setCellValueFactory(new PropertyValueFactory<>("informacion"));
         infoColumna.setMinWidth(180);
 
-        tabla.getColumns().addAll(infoColumna);
+        TableColumn<TablaElemento, String> valorColumna = new TableColumn<>("Total");
+        valorColumna.setCellValueFactory(new PropertyValueFactory<>("total"));
+        valorColumna.setMinWidth(180);
+
+        tabla.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        tabla.getColumns().addAll(infoColumna, valorColumna);
 
         selector.setOnAction(e -> {
 
