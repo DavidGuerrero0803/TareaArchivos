@@ -93,7 +93,7 @@ public class VistaEditor {
             }
         });
 
-        // Todos los elementos del contenedor se guardan dentro de la escena.
+        // Todos los elementos del panel principal se guardan dentro de la escena.
         Scene scene = new Scene(panelPrincipal, 500, 600);
         stage.setScene(scene);
         stage.show();

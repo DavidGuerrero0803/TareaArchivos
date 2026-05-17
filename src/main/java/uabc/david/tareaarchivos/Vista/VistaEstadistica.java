@@ -107,7 +107,7 @@ public class VistaEstadistica {
         panel.setCenter(tabla);
         panel.setPadding(new Insets(10));
 
-        // Todos los elementos del contenedor se guardan dentro de la escena.
+        // Todos los elementos del panel se guardan dentro de la escena.
         Scene scene = new Scene(panel, 500, 250);
         // Se desactiva la opción de modificar el tamaño de la ventana.
         stage.setResizable(false);
