@@ -43,10 +43,10 @@ public class Main extends Application {
 
         botonCSV.setOnAction(e -> {
             VistaCSV vistaCSV = new VistaCSV();
-
+            vistaCSV.visualizarCSV();
         });
 
-        VBox contenedorPrincipal = new VBox(15, botonEditorNotas, botonEstadistica);
+        VBox contenedorPrincipal = new VBox(15, botonEditorNotas, botonEstadistica, botonCSV);
         contenedorPrincipal.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(contenedorPrincipal, 500, 500);
