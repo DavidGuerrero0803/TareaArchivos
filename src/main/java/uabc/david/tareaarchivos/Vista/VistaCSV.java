@@ -19,8 +19,8 @@ import javafx.stage.Stage;
 import java.io.File;
 
 /**
- * Clase que crea la ventana para la visualización de archivos CSV.
- * Modela las columnas de forma dinámica adaptándose al contenido del archivo.
+ * VistaCSV crea la ventana para la visualización de archivos CSV.
+ * Modela las columnas de forma dinámica en una tabla, adaptándose al contenido del archivo.
  */
 public class VistaCSV {
     private VisualizadorCSV logicaCSV;
