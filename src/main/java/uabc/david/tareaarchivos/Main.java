@@ -1,5 +1,6 @@
 package uabc.david.tareaarchivos;
 import uabc.david.tareaarchivos.Vista.VistaCSV;
+import uabc.david.tareaarchivos.Vista.VistaClonador;
 import uabc.david.tareaarchivos.Vista.VistaEditor;
 import uabc.david.tareaarchivos.Vista.VistaEstadistica;
 
@@ -62,9 +63,18 @@ public class Main extends Application {
         Label bytes = new Label("Flujos de Bytes");
         bytes.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
 
-        Button ejercicio4 = new Button("Clonador de Imágenes");
-        ejercicio4.setPrefWidth(200);
-        ejercicio4.setPrefHeight(40);
+        Button botonClonador = new Button("Clonador de Imágenes");
+        botonClonador.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+
+        botonClonador.setPrefWidth(200);
+        botonClonador.setPrefHeight(40);
+
+        botonClonador.setOnAction(e -> {
+            VistaClonador vistaClonador = new VistaClonador();
+            vistaClonador.mostrarClonador();
+        });
+
+
         Button ejercicio5 = new Button("Encriptador XOR");
         ejercicio5.setPrefWidth(200);
         ejercicio5.setPrefHeight(40);
@@ -72,7 +82,7 @@ public class Main extends Application {
         ejercicio6.setPrefWidth(200);
         ejercicio6.setPrefHeight(40);
 
-        VBox contenedorDerecha = new VBox(12, bytes, ejercicio4, ejercicio5, ejercicio6);
+        VBox contenedorDerecha = new VBox(12, bytes, botonClonador, ejercicio5, ejercicio6);
         contenedorDerecha.setAlignment(Pos.CENTER);
         contenedorDerecha.setPadding(new Insets(10));
 
