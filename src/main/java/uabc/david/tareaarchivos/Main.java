@@ -31,7 +31,8 @@ public class Main extends Application {
         });
 
         botonEstadistica.setOnAction(event -> {
-
+            VistaEstadistica vistaEstadistica = new VistaEstadistica();
+            vistaEstadistica.mostrarEstadisticas();
         });
 
         VBox contenedorPrincipal = new VBox(15, botonEditorNotas, botonEstadistica);
