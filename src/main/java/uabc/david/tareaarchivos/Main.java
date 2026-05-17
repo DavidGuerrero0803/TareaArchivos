@@ -15,7 +15,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Archivos | Flujos de caracter");
+        primaryStage.setTitle("Flujos | Manejo de archivos");
+
+        Label titulo = new Label("Manipulador de archivos");
+        titulo.setStyle("-fx-font-weight: bold; -fx-font-size: 36px;");
 
         Label caracteres = new Label("Flujos de Caracteres");
         caracteres.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
@@ -101,7 +104,10 @@ public class Main extends Application {
         contenedorPrincipal.setAlignment(Pos.CENTER);
         contenedorPrincipal.setPadding(new Insets(20));
 
-        Scene scene = new Scene(contenedorPrincipal, 550, 550);
+        VBox contenedorTitulo = new VBox(5, titulo, contenedorPrincipal);
+        contenedorTitulo.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(contenedorTitulo, 550, 550);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
