@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -32,8 +33,6 @@ public class VistaEstadistica {
 
         Button selector = new Button("Abre un archivo para analizar");
 
-
-
         selector.setOnAction(e -> {
 
         });
@@ -51,5 +50,22 @@ public class VistaEstadistica {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static class TablaElemento {
+        private String informacion;
+        private String total;
+
+        public TablaElemento(String informacion, String total) {
+            this.informacion = informacion;
+            this.total = total;
+        }
+        public String getInformacion() {
+            return informacion;
+        }
+
+        public String getTotal() {
+            return total;
+        }
     }
 }
