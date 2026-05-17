@@ -14,6 +14,10 @@ import javafx.scene.layout.VBox;
 
 import javafx.stage.Stage;
 
+import java.io.File;
+import javafx.stage.FileChooser;
+import java.io.IOException;
+
 public class VistaEncriptador {
     private EncriptadorXOR encriptador;
 
@@ -25,7 +29,7 @@ public class VistaEncriptador {
         Stage stage = new Stage();
         stage.setTitle("Encriptador XOR");
 
-        Label titulo = new Label("Cifra/descifra el archivo que desees");
+        Label titulo = new Label("Encripta/Desencripta el archivo que desees");
         titulo.setStyle("-fx-font-weight: bold; -fx-font-size: 13px;");
 
         TextField campoTexto = new TextField("123");
@@ -35,6 +39,30 @@ public class VistaEncriptador {
 
         Button encriptar = new Button("Seleccionar archivo");
         encriptar.setStyle("-fx-font-size: 14px; -fx-padding: 8px 15px;");
+
+        encriptar.setOnAction(e -> {
+            File archivo = new FileChooser().showOpenDialog(stage);
+
+            if (archivo != null) {
+                File destino = new File(archivo.getParent(), "xor_" + archivo.getName());
+
+                try {
+                    encriptador.procesarXOR(archivo, destino, campoTexto.getText());
+
+                    mostrarMensaje(Alert.AlertType.INFORMATION, "Proceso finalizado",
+                            "Se ha generado el archivo: " + destino.getName() +
+                                    "\nUbicado en: " + destino.getParent() +
+                                    "\nVuelve a procesar archivo con la misma clave para recuperarlo");
+
+                } catch (NumberFormatException nfe) {
+                    mostrarMensaje(Alert.AlertType.WARNING, "Error generado",
+                            "La máscara debe ser un número entero entre 0 y 255");
+                } catch (IOException ex) {
+                    mostrarMensaje(Alert.AlertType.ERROR, "Error generado",
+                            "Error al leer/escribir el flujo de bytes: " + ex.getMessage());
+                }
+            }
+        });
 
         HBox contenedorMascara = new HBox(10, new Label("Clave XOR (0-255):"), campoTexto);
         contenedorMascara.setAlignment(Pos.CENTER);
