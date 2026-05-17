@@ -82,11 +82,18 @@ public class Main extends Application {
             vistaEncriptador.mostrarEncriptador();
         });
 
-        Button ejercicio6 = new Button("Indentificador de Tipos");
-        ejercicio6.setPrefWidth(200);
-        ejercicio6.setPrefHeight(40);
+        Button botonIdentificador = new Button("Indentificador de Tipos");
+        botonIdentificador.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
-        VBox contenedorDerecha = new VBox(12, bytes, botonClonador, botonEncriptador, ejercicio6);
+        botonIdentificador.setPrefWidth(200);
+        botonIdentificador.setPrefHeight(40);
+
+        botonIdentificador.setOnAction(e -> {
+            VistaIdentificador vistaIdentificador = new VistaIdentificador();
+            vistaIdentificador.mostrarIdentificador();
+        });
+
+        VBox contenedorDerecha = new VBox(12, bytes, botonClonador, botonEncriptador, botonIdentificador);
         contenedorDerecha.setAlignment(Pos.CENTER);
         contenedorDerecha.setPadding(new Insets(10));
 
@@ -94,7 +101,7 @@ public class Main extends Application {
         contenedorPrincipal.setAlignment(Pos.CENTER);
         contenedorPrincipal.setPadding(new Insets(20));
 
-        Scene scene = new Scene(contenedorPrincipal, 500, 500);
+        Scene scene = new Scene(contenedorPrincipal, 550, 550);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
