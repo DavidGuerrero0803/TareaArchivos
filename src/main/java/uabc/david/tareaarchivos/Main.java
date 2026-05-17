@@ -16,15 +16,25 @@ public class Main extends Application {
         Button botonEditorNotas = new Button("Editor de notas");
         botonEditorNotas.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
+        Button botonEstadistica = new Button("Estadísticas de texto");
+        botonEstadistica.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+
         botonEditorNotas.setPrefWidth(200);
         botonEditorNotas.setPrefHeight(40);
+
+        botonEstadistica.setPrefWidth(200);
+        botonEstadistica.setPrefHeight(40);
 
         botonEditorNotas.setOnAction(e -> {
             VistaEditor vistaEditor = new VistaEditor();
             vistaEditor.mostrarEditor();
         });
 
-        VBox contenedorPrincipal = new VBox(15, botonEditorNotas);
+        botonEstadistica.setOnAction(event -> {
+
+        });
+
+        VBox contenedorPrincipal = new VBox(15, botonEditorNotas, botonEstadistica);
         contenedorPrincipal.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(contenedorPrincipal, 500, 500);
