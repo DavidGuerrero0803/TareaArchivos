@@ -78,7 +78,8 @@ public class Main extends Application {
         botonEncriptador.setPrefHeight(40);
 
         botonEncriptador.setOnAction(e -> {
-
+            VistaEncriptador vistaEncriptador = new VistaEncriptador();
+            vistaEncriptador.mostrarEncriptador();
         });
 
         Button ejercicio6 = new Button("Indentificador de Tipos");
