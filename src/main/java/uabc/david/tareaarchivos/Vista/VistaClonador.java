@@ -101,7 +101,7 @@ public class VistaClonador {
         contenedorPrincipal.setAlignment(Pos.CENTER);
         contenedorPrincipal.setPadding(new Insets(20));
 
-        // Creación del panel principal de la ventana
+        // Creación del panel principal de la ventana.
         BorderPane panel = new BorderPane();
         panel.setCenter(contenedorPrincipal);
 
