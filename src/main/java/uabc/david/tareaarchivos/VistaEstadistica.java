@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -32,6 +33,12 @@ public class VistaEstadistica {
         tabla.setStyle("-fx-font-size: 16px;");
 
         Button selector = new Button("Abre un archivo para analizar");
+
+        TableColumn<TablaElemento, String> infoColumna = new TableColumn<>("Información");
+        infoColumna.setCellValueFactory(new PropertyValueFactory<>("informacion"));
+        infoColumna.setMinWidth(180);
+
+        tabla.getColumns().addAll(infoColumna);
 
         selector.setOnAction(e -> {
 
