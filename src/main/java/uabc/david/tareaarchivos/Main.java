@@ -1,8 +1,5 @@
 package uabc.david.tareaarchivos;
-import uabc.david.tareaarchivos.Vista.VistaCSV;
-import uabc.david.tareaarchivos.Vista.VistaClonador;
-import uabc.david.tareaarchivos.Vista.VistaEditor;
-import uabc.david.tareaarchivos.Vista.VistaEstadistica;
+import uabc.david.tareaarchivos.Vista.*;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -74,15 +71,21 @@ public class Main extends Application {
             vistaClonador.mostrarClonador();
         });
 
+        Button botonEncriptador = new Button("Encriptador XOR");
+        botonEncriptador.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
 
-        Button ejercicio5 = new Button("Encriptador XOR");
-        ejercicio5.setPrefWidth(200);
-        ejercicio5.setPrefHeight(40);
+        botonEncriptador.setPrefWidth(200);
+        botonEncriptador.setPrefHeight(40);
+
+        botonEncriptador.setOnAction(e -> {
+
+        });
+
         Button ejercicio6 = new Button("Indentificador de Tipos");
         ejercicio6.setPrefWidth(200);
         ejercicio6.setPrefHeight(40);
 
-        VBox contenedorDerecha = new VBox(12, bytes, botonClonador, ejercicio5, ejercicio6);
+        VBox contenedorDerecha = new VBox(12, bytes, botonClonador, botonEncriptador, ejercicio6);
         contenedorDerecha.setAlignment(Pos.CENTER);
         contenedorDerecha.setPadding(new Insets(10));
 
